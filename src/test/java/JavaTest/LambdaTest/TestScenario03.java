@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +19,7 @@ public class TestScenario03 {
 	public static String username = "priyartoshniwal09";
 	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
 	public static RemoteWebDriver driver = null;
-	// static String gridURL = "@hub.lambdatest.com/wd/hub";
+	 static String gridURL = "@hub.lambdatest.com/wd/hub";
 	boolean status = false;
 
 	public static void main(String[] args) {
@@ -30,14 +31,19 @@ public class TestScenario03 {
 	}
 
 	private void setUp() {
-
-		ChromeOptions browserOptions = new ChromeOptions();
+		/*
+		 * ChromeOptions browserOptions = new ChromeOptions();
+		 * browserOptions.setPlatformName("Windows 11");
+		 * browserOptions.setBrowserVersion("latest");
+		 */
+		EdgeOptions browserOptions = new EdgeOptions(); 
 		browserOptions.setPlatformName("Windows 11");
 		browserOptions.setBrowserVersion("latest");
 
+
 		HashMap<String, Object> ltOptions = new HashMap<>();
-		ltOptions.put("build", "Input Form");
-		ltOptions.put("name", "Input Form Submit");
+		ltOptions.put("build", "Input Form01");
+		ltOptions.put("name", "Input Form Submit01");
 		ltOptions.put("visual", true);
 		ltOptions.put("video", true);
 		ltOptions.put("network", true);
@@ -47,7 +53,7 @@ public class TestScenario03 {
 
 		try {
 			driver = new RemoteWebDriver(
-					new URL("https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub"), browserOptions);
+					new URL("https://" + username + ":" + accesskey + gridURL), browserOptions);
 
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 

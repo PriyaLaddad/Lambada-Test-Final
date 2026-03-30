@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,7 +28,7 @@ public class TC03_InputForm {
     @BeforeTest
     public void setUp() {
         try {
-            ChromeOptions browserOptions = new ChromeOptions();
+        		EdgeOptions browserOptions = new EdgeOptions(); 
             browserOptions.setPlatformName("Windows 11");
             browserOptions.setBrowserVersion("latest");
 
