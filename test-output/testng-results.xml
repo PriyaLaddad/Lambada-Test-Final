@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-30T16:16:10 IST" name="Default suite" finished-at="2026-03-30T16:16:32 IST" duration-ms="22537">
+  <suite started-at="2026-03-30T20:23:36 IST" name="Default suite" finished-at="2026-03-30T20:23:52 IST" duration-ms="16647">
     <groups>
     </groups>
-    <test started-at="2026-03-30T16:16:10 IST" name="Default test" finished-at="2026-03-30T16:16:32 IST" duration-ms="22537">
-      <class name="JavaTest.LambdaTest.TC03_InputForm">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:JavaTest.LambdaTest.TC03_InputForm@71d44a3]" started-at="2026-03-30T16:16:10 IST" name="setUp" finished-at="2026-03-30T16:16:20 IST" duration-ms="10242" status="PASS">
+    <test started-at="2026-03-30T20:23:36 IST" name="Default test" finished-at="2026-03-30T20:23:52 IST" duration-ms="16647">
+      <class name="JavaTest.LambdaTest.TC02_Slider">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:JavaTest.LambdaTest.TC02_Slider@59474f18]" started-at="2026-03-30T20:23:36 IST" name="setUp" finished-at="2026-03-30T20:23:45 IST" duration-ms="9564" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testInputFormSubmit()[pri:0, instance:JavaTest.LambdaTest.TC03_InputForm@71d44a3]" started-at="2026-03-30T16:16:20 IST" name="testInputFormSubmit" finished-at="2026-03-30T16:16:30 IST" duration-ms="10450" status="PASS">
+        <test-method signature="testSlider()[pri:0, instance:JavaTest.LambdaTest.TC02_Slider@59474f18]" started-at="2026-03-30T20:23:45 IST" name="testSlider" finished-at="2026-03-30T20:23:51 IST" duration-ms="5518" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testInputFormSubmit -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:JavaTest.LambdaTest.TC03_InputForm@71d44a3]" started-at="2026-03-30T16:16:30 IST" name="tearDown" finished-at="2026-03-30T16:16:32 IST" duration-ms="1780" status="PASS">
+        </test-method> <!-- testSlider -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:JavaTest.LambdaTest.TC02_Slider@59474f18]" started-at="2026-03-30T20:23:51 IST" name="tearDown" finished-at="2026-03-30T20:23:52 IST" duration-ms="1537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- JavaTest.LambdaTest.TC03_InputForm -->
+      </class> <!-- JavaTest.LambdaTest.TC02_Slider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

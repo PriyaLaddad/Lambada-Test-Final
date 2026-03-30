@@ -9,7 +9,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,20 +17,23 @@ public class TestScenario02 {
 
 	public static String username = "priyartoshniwal09";
 	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
-	// static String gridURL = "@hub.lambdatest.com/wd/hub";
+	//static String gridURL = "@hub.lambdatest.com/wd/hub";
 
 	public static void main(String[] args) throws Exception {
 
 		String hub = "https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub";
-
-		ChromeOptions options = new ChromeOptions();
-		options.setPlatformName("Windows 11");
-		options.setBrowserVersion("latest");
+		/*
+		 * ChromeOptions options = new ChromeOptions();
+		 * options.setPlatformName("Windows 11"); options.setBrowserVersion("latest");
+		 */
+		SafariOptions options = new SafariOptions(); 
+		options.setPlatformName("macOS Ventura"); 
+		options.setBrowserVersion("latest"); 
 
 		HashMap<String, Object> ltOptions = new HashMap<>();
 		ltOptions.put("project", "Slider Test");
-		ltOptions.put("build", "Drag");
-		ltOptions.put("name", "Drag and slide");
+		ltOptions.put("build", "Drag01");
+		ltOptions.put("name", "Drag and slide01");
 		ltOptions.put("w3c", true);
 
 		options.setCapability("LT:Options", ltOptions);
