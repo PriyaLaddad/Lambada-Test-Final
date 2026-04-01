@@ -1,25 +1,25 @@
 package JavaTest.LambdaTest;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-
 import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 public class TestScenario03 {
 
-	public static String username = "priyartoshniwal09";
-	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
+	public static String username = "kailashbangad13";
+	public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
+	static String gridURL = "@hub.lambdatest.com/wd/hub";
 	public static RemoteWebDriver driver = null;
-	//static String gridURL = "@hub.lambdatest.com/wd/hub";
+	
 	boolean status = false;
 
 	public static void main(String[] args) {
@@ -48,7 +48,7 @@ public class TestScenario03 {
 
 		try {
 			driver = new RemoteWebDriver(
-					new URL("https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub"), browserOptions);
+					new URL("https://" + username + ":" + accesskey + gridURL), browserOptions);
 
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 

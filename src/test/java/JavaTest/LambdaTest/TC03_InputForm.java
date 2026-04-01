@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,23 +18,23 @@ import org.testng.annotations.Test;
 
 public class TC03_InputForm {
 
-    public static String username = "priyartoshniwal09";
-    public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
+    public static String username = "kailashbangad13";
+    public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
+   //static String gridURL = "@hub.lambdatest.com/wd/hub";
+    public static RemoteWebDriver driver = null;
 
-    public RemoteWebDriver driver;
-    public WebDriverWait wait;
-    public boolean status = false;
+    boolean status = false;
+    WebDriverWait wait;
 
     @BeforeTest
     public void setUp() {
         try {
-        		EdgeOptions browserOptions = new EdgeOptions(); 
+            EdgeOptions browserOptions = new EdgeOptions();
             browserOptions.setPlatformName("Windows 11");
             browserOptions.setBrowserVersion("latest");
-
             HashMap<String, Object> ltOptions = new HashMap<>();
-            ltOptions.put("build", "Input Form");
-            ltOptions.put("name", "Input Form Submit");
+            ltOptions.put("build", "Input Form1.1");
+            ltOptions.put("name", "Input Form Submit1.1");
             ltOptions.put("visual", true);
             ltOptions.put("video", true);
             ltOptions.put("network", true);
@@ -43,12 +43,12 @@ public class TC03_InputForm {
             browserOptions.setCapability("LT:Options", ltOptions);
 
             driver = new RemoteWebDriver(
-                    new URL("https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub"),
+                    new URL("https://" + username + ":" + accesskey +"@hub.lambdatest.com/wd/hub" ),
                     browserOptions
             );
 
-            driver.manage().window().maximize();
             wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            driver.manage().window().maximize();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,48 +57,47 @@ public class TC03_InputForm {
 
     @Test
     public void testInputFormSubmit() {
-
         try {
             // Step 1: Open Playground
             driver.get("https://www.lambdatest.com/selenium-playground");
 
             By inputForm = By.xpath("//a[text()='Input Form Submit']");
-            wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(inputForm))).click();
+            wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(inputForm)));
+            driver.findElement(inputForm).click();
 
             wait.until(ExpectedConditions.urlContains("input-form-demo"));
-            System.out.println("Navigated to Input Form Submit");
+            System.out.println("Step 1: Navigated to Input Form Submit");
 
             // Step 2: Click Submit without filling
-            By submitBtn = By.xpath("//button[text()='Submit']");
-            wait.until(ExpectedConditions.elementToBeClickable(submitBtn)).click();
-            System.out.println("Clicked Submit without data");
+            driver.findElement(By.xpath("//button[text()='Submit']")).click();
+            System.out.println("Step 2: Clicked Submit without data");
 
-            // Step 3: Validate HTML5 error message
+            // Step 3: Validate error message
             String validationMessage = driver.findElement(By.id("name")).getAttribute("validationMessage");
             System.out.println("Validation message: " + validationMessage);
             Assert.assertTrue(validationMessage.contains("Please fill"));
-            System.out.println("Validation message verified");
+            System.out.println("Step 3: Validation message verified");
 
-            // Step 4 & 5: Fill form and select country
+            // Step 4: Fill form
             driver.findElement(By.id("name")).sendKeys("John Doe");
             driver.findElement(By.id("inputEmail4")).sendKeys("john@test.com");
             driver.findElement(By.id("inputPassword4")).sendKeys("Password123");
             driver.findElement(By.id("company")).sendKeys("ABC Pvt Ltd");
             driver.findElement(By.id("websitename")).sendKeys("https://abc.com");
 
+            // Step 5: Select Country
             new Select(driver.findElement(By.name("country"))).selectByVisibleText("United States");
-
             driver.findElement(By.id("inputCity")).sendKeys("New York");
             driver.findElement(By.id("inputAddress1")).sendKeys("Street 1");
             driver.findElement(By.id("inputAddress2")).sendKeys("Street 2");
             driver.findElement(By.id("inputState")).sendKeys("NY");
             driver.findElement(By.id("inputZip")).sendKeys("10001");
 
-            System.out.println("Form filled and country selected");
+            System.out.println("Step 4 & 5: Form filled + Country selected");
 
             // Step 6: Submit form
-            wait.until(ExpectedConditions.elementToBeClickable(submitBtn)).click();
-            System.out.println("Form submitted");
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Submit']"))).click();
+            System.out.println("Step 6: Form submitted");
 
             // Step 7: Validate success message
             By successLocator = By.xpath("//p[contains(@class,'success-msg')]");
@@ -108,13 +107,13 @@ public class TC03_InputForm {
 
             System.out.println("Success message: " + successMsg);
             Assert.assertEquals(successMsg, "Thanks for contacting us, we will get back to you shortly.");
-            System.out.println("Success message validated");
+            System.out.println("Step 7: Success message validated");
 
             status = true;
 
         } catch (Exception e) {
-            status = false;
             e.printStackTrace();
+            status = false;
             Assert.fail("Test failed due to exception");
         }
     }

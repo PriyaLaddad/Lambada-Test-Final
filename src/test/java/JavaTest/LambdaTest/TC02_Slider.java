@@ -20,8 +20,8 @@ import org.testng.annotations.Test;
 
 public class TC02_Slider {
 
-	public static String username = "priyartoshniwal09";
-	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
+	  public static String username = "kailashbangad13";
+	    public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
 
 	public RemoteWebDriver driver;
 	public WebDriverWait wait;
@@ -41,9 +41,9 @@ public class TC02_Slider {
 			options.setBrowserVersion("latest");
 
 			HashMap<String, Object> ltOptions = new HashMap<>();
-			ltOptions.put("project", "Slider Test");
-			ltOptions.put("build", "Drag");
-			ltOptions.put("name", "Drag and slide");
+			ltOptions.put("project", "Slider Test111");
+			ltOptions.put("build", "Drag111");
+			ltOptions.put("name", "Drag and slide11");
 			ltOptions.put("w3c", true);
 
 			options.setCapability("LT:Options", ltOptions);

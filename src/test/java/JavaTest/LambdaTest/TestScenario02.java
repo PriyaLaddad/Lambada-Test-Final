@@ -15,13 +15,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestScenario02 {
 
-	public static String username = "priyartoshniwal09";
-	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
-	//static String gridURL = "@hub.lambdatest.com/wd/hub";
+	public static String username = "kailashbangad13";
+	public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
+	static String gridURL = "@hub.lambdatest.com/wd/hub";
 
 	public static void main(String[] args) throws Exception {
 
-		String hub = "https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub";
+		String hub = "https://" + username + ":" + accesskey + gridURL;
 		/*
 		 * ChromeOptions options = new ChromeOptions();
 		 * options.setPlatformName("Windows 11"); options.setBrowserVersion("latest");
@@ -32,8 +32,8 @@ public class TestScenario02 {
 
 		HashMap<String, Object> ltOptions = new HashMap<>();
 		ltOptions.put("project", "Slider Test");
-		ltOptions.put("build", "Drag01");
-		ltOptions.put("name", "Drag and slide01");
+		ltOptions.put("build", "Drag101");
+		ltOptions.put("name", "Drag and slide101");
 		ltOptions.put("w3c", true);
 
 		options.setCapability("LT:Options", ltOptions);

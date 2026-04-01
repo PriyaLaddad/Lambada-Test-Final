@@ -17,8 +17,8 @@ import org.testng.annotations.Test;
 
 public class TC01_Simpleform {
 
-    public static String username = "priyartoshniwal09";
-    public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
+    public static String username = "kailashbangad13";
+    public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
 
     public RemoteWebDriver driver = null;
     public boolean status = false;

@@ -14,10 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class TestScenario01 {
-	public static String username = "priyartoshniwal09";
-	public static String accesskey = "LT_dFS8UUR3760AJ0Ir3mCl0QpF3Frc0kMPqWB90bE8g90TPne";
+	public static String username = "kailashbangad13";
+	public static String accesskey = "LT_zzcYSkD0pC39dk0WThXINcOSiaPX6C15MZItTk9wehQVdzl";
 	public static RemoteWebDriver driver = null;
-	// static String gridURL = "@hub.lambdatest.com/wd/hub";
+	static String gridURL = "@hub.lambdatest.com/wd/hub";
 	boolean status = false;
 
 	public static void main(String[] args) {
@@ -36,8 +36,8 @@ public class TestScenario01 {
 		chromeOptions.setPlatformName("Windows 11");
 		chromeOptions.setBrowserVersion("146.0");
 		HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-		ltOptions.put("build", "LamdaTest");
-		ltOptions.put("name", "Simple form");
+		ltOptions.put("build", "LamdaTest91");
+		ltOptions.put("name", "Simple form91");
 		ltOptions.put("visual", true);
 		ltOptions.put("video", true);
 		ltOptions.put("network", true);
@@ -47,7 +47,7 @@ public class TestScenario01 {
 		try {
 
 			driver = new RemoteWebDriver(
-					new URL("https://" + username + ":" + accesskey + "@hub.lambdatest.com/wd/hub"), chromeOptions);
+					new URL("https://" + username + ":" + accesskey + gridURL), chromeOptions);
 
 			System.out.println("Navigating to Input Field section");
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
